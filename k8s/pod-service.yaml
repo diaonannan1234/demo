@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: duwei-1-service
+  namespace: ddd
+spec:
+  type: ClusterIP 
+  selector:
+    component: duwei-1
+  ports:
+  - name: kafka
+    port: 9092
+    targetPort: 9092

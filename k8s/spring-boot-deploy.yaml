@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: duwei-1-deployment
+  namespace: ddd
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: duwei-1
+  template:
+    metadata:
+      labels:
+        component: duwei-1
+    spec:
+      containers:
+      - name: duwei-1 
+        image:  duweiduwais/demo:v3
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 9092
+        env:
+           - name: application-name
+             value: "duwei1"
+           - name: server-port
+             value: "9092"
