@@ -12,8 +12,11 @@ public class HelloController {
 
     @Value("${server.port}")
     private String port;
+
+    @Value("${project.ip}")
+    private String ip;
     @GetMapping("/")
     public String hello(){
-        return appName+":"+port;
+        return appName+":"+port+":IP:"+ip;
     }
 }

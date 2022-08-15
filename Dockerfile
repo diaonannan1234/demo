@@ -1,6 +1,6 @@
 FROM java:8-jdk-alpine
 
-COPY ./demo-0.0.1-SNAPSHOT.jar /usr/app/
+COPY demo-0.0.1-SNAPSHOT-1.jar /usr/app/
 
 WORKDIR /usr/app
 
